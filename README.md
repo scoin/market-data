@@ -1,15 +1,43 @@
-Markit API Wrapper
-===============
+Byte Academy Workshop- HTTP Requests and Scraping
+=======================================================
 
-Today is your first challenge using an API. Cool!
+Welcome to Byte Academy! Thank you for joining us for this special workshop event.
 
-First install 'requests' using pip. We'll be dependent on this library, as it is definitely the best [HTTP request library](http://docs.python-requests.org/en/latest/) in Python. Take a look at the code snippet and get an idea of what it's doing. We'll be using requests to get live stock market data.
+Let's get started, shall we?
+
+If you don't have it installed already, you'll need to download and install pip3. Pip is a package manager for Python3 libraries.
+
+On Ubuntu:
+
+		sudo apt-get install python3-pip
+
+On Mac:
+		
+		Pip / Pip3 is automatically installed if you installed Python / Python3 with Homebrew
+
+On Windows:
+
+		Python3.4 ships with Pip.   
+		If you don't have Python3.4, follow these instructions to install Pip for your version https://pip.pypa.io/en/latest/installing.html
+
+Use pip3 to install requests and beautifulsoup4.
+
+		sudo pip3 install requests  
+		sudo pip3 install beautifulsoup4
+
+If you only have Python 2, that's fine. Just remove the 3 use regular pip.
+
+###Requests
+
+We'll be dependent on these two libraries for consuming JSON APIs and web scraping.Requests is definitely the best [HTTP request library](http://docs.python-requests.org/en/latest/) in Python. Take a look at the code snippet and get an idea of what it's doing. We'll be using requests to get live stock market data.
 
 The API we'll be using is [Markit on Demand](http://dev.markitondemand.com/)
 
 How do HTTP requests work? Well, everytime you browse the web you are making http requests. You are asking for data from a URL. Your browser usually expects data in the form of HTML.
 
-We could request HTML in our code also, but it's kind of a mess. Instead we're going to request [JSON](http://en.wikipedia.org/wiki/JSON), which Python will treat like a native object courtesy of the requests library. 
+Instead of requesting HTML though, we're going to request [JSON](http://en.wikipedia.org/wiki/JSON), which Python will treat like a native object courtesy of the requests library. 
+
+###Step 0: Know your Outputs and Inputs
 
 Take a look at these links so you know what to expect from the API. Read through the docs for Markit on Demand.
 
@@ -18,10 +46,18 @@ http://dev.markitondemand.com/Api/v2/Lookup/json?input=Netflix
 http://dev.markitondemand.com/Api/v2/Quote/json?symbol=AAPL
 
 ###Step 1: Wrap the API calls in an object  
-Wrap the calls to Markit on Demand in a class. I've already started it for you. Write the methods get_company_data and get_quote. get_company_data takes a company's name in English and returns some basic data, like the formal name, the exchange it is on, and most importantly it's ticker symbol. The API will likely return more than one. get_quote takes a ticker symbol and receives up to the minute quote data.
+We're going to wrap the calls to Markit on Demand in a class. This way it is portable and modular. Anybody can use our class and not be concerned with what is going on behind the scenes. If the API changes, this is the only place the code will break.
+
+We're going to write the methods `get_symbols` and `get_quote`. `get_symbols` takes a company's name in English and returns some basic data, like the formal name, the exchange it is on, and most importantly it's ticker symbol. The API will likely return more than one. `get_quote` takes a ticker symbol and receives up to the minute quote data.
 
 ###Step 2:  
-Test that your functions are working in the python interpreter. What happens if you send an incorrect string and it can't find the company, does it throw an error? Fix this - we don't want your program crashing on users.
+Run your code and that your functions are working. Alright! Now make a file in the same directory that will be our app - call it app.py.
+
+Inside app.py:
+
+		from markit import Markit
+
+Make sure that your code is linked and working. Instantiate a new Markit object and print the results of get_symbols and get_quote.
 
 Scraping the Web
 =================
@@ -32,21 +68,18 @@ Have you ever wanted to use the information from a website? Alot of our favorite
 
 Several people have built APIs for them using web scrapers - and they were showered in bitcoin, dogecoin, and pizza. Time to get in on the action!
 
-Use pip3 to install requests and beautifulsoup4.
-
-		sudo pip3 install requests  
-		sudo pip3 install beautifulsoup4
-
 ###Scrape Coin Market Cap
 
-Use [this tutorial](http://blog.miguelgrinberg.com/post/easy-web-scraping-with-python) as a guide to scraping using requests and bs4. This is for a different site and case, but you should skim and read enough of the code snippets to get the idea.
+Web scraping is not an exact science. We are parsing through HTML for data that we want.
 
-Your code should return the name of currency and it's current value as key-value pairs for all 100 coins on the market. 
+Beautiful Soup tries to make it easy as possible, by giving us objects based on html tags and css selectors.
 
-You will need to remove the dollar-sign from the price string. We need it as a float so we can manipulate that data later.
+Our goal for our code is to return the name of currency and it's current value as key-value pairs for all 100 coins on the market. This way, we can do the following:
 
-The complete list should be ordered as they are ordered on the market.
+		current_prices = CoinMarket().get_coins()
+		current_prices['Bitcoin'] ## 422.09
 
-###Save it to a CSV
-
-Now export your list to a CSV file and save it in the directory. Push it up!
+Resources
+==========
+[Requests](http://docs.python-requests.org/en/latest/)
+[Beautiful Soup Tutorial](http://blog.miguelgrinberg.com/post/easy-web-scraping-with-python)
