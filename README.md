@@ -27,7 +27,8 @@ Install Python3.4 [here](https://www.python.org/downloads/windows/)
 
 Install SQLite3 [here](http://www.sqlite.org/2014/sqlite-shell-win32-x86-3080702.zip)
 
-Run this:  
+Run this:
+
 		pip install requests
 
 
