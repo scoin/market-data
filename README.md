@@ -35,7 +35,7 @@ Run this:
 
 Resources
 ==========
-[Python SQLite3 Documentation](https://docs.python.org/3.4/library/sqlite3.html)
-[Cron](http://benr75.com/pages/using_crontab_mac_os_x_unix_linux)
-[Windows Task Scheduler](http://stackoverflow.com/a/5314695)
-[Requests](http://docs.python-requests.org/en/latest/)
+[Python SQLite3 Documentation](https://docs.python.org/3.4/library/sqlite3.html)  
+[Cron](http://benr75.com/pages/using_crontab_mac_os_x_unix_linux)  
+[Windows Task Scheduler](http://stackoverflow.com/a/5314695)  
+[Requests](http://docs.python-requests.org/en/latest/)  
