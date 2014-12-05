@@ -7,8 +7,8 @@ class Markit:
 		self.symbol_url = "http://dev.markitondemand.com/Api/v2/Lookup/json?input="
 		self.quote_url = "http://dev.markitondemand.com/Api/v2/Quote/json?symbol="
 
-	def get_symbol(self, symbol):
-		url = self.symbol_url + symbol ##join the url with the symbol input
+	def get_symbol(self, company_name):
+		url = self.symbol_url + company_name ##join the url with the symbol input
 		symbol_object = requests.get(url).json() ##parse json returned from the web
 		return(symbol_object)
 
@@ -17,7 +17,7 @@ class Markit:
 		symbol_object = requests.get(url).json() ##parse json returned from the web
 		return(symbol_object)
 
-api = Markit() ##instantiate api wrapper
+# api = Markit() ##instantiate api wrapper
 
-print(api.get_symbol("Microsoft"))
-print(api.get_quote("MSFT"))
+# print(api.get_symbol("Microsoft"))
+# print(api.get_quote("MSFT"))
