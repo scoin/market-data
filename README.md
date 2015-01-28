@@ -16,14 +16,16 @@ You will need to do the following to get set up for this workshop:
 On Ubuntu:
 
 		sudo apt-get install python-pip
-		sudo pip install requests
+		sudo pip install matplotlib
+		sudo pip install numpy
 
 On Mac:
 
 Pip / Pip3 is automatically installed if you installed Python / Python3 with Homebrew. If you do not have Homebrew, install pip using:
 
 		sudo easy_install pip
-		pip install requests
+		pip install matplotlib
+		pip install numpy
 
 On Windows:
 
