@@ -31,6 +31,9 @@ Run this:
 
 		pip install requests
 
+We're also going to need MatPlotLib for making graphs today.
+
+		pip install matplotlib
 
 
 Resources
