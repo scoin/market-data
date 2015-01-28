@@ -7,6 +7,8 @@ If you would like to see the readme and code for just the first workshop, switch
 
 Let's get started, shall we?
 
+		git clone https://github.com/scoin/market-data.git
+
 First, pull this repo. We are using the database file that is included.
 
 You will need to do the following to get set up for this workshop:
