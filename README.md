@@ -1,4 +1,4 @@
-Byte Academy Workshop 2 - Storing Stock Data in a Database
+Byte Academy Workshop 3 - Plotting Stock Data
 =======================================================
 
 Welcome to Byte Academy! Thank you for joining us for this special workshop event.
@@ -6,6 +6,8 @@ Welcome to Byte Academy! Thank you for joining us for this special workshop even
 If you would like to see the readme and code for just the first workshop, switch to branch "workshop-1"
 
 Let's get started, shall we?
+
+First, pull this repo. We are using the database file that is included.
 
 You will need to do the following to get set up for this workshop:
 
